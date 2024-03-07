@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #939090;
+    background-color: #13162D;
 }
 
 .container {
@@ -41,15 +41,15 @@ button {
 }
 
 .btn-cadastro {
-    background-color: #4CAF50;
+    background-color: #087cc0;
     color: white;
 }
 
 .btn-buscar {
-    background-color: #4CAF50;
+    background-color: #087cc0;
     color: white;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0D416F;
 }
