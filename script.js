@@ -19,15 +19,15 @@ function cadastrar () {
      .catch(function (res) {console.log(res) })
     };
 
-
-formulario.addEventListener('submit', (event) {
+        Function limpar() = {
+            Inome.value = "";
+            Icpf.value = "";
+            Iemail.value = "";
+            Itel.value = "";
+};
+       formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        cont dados = {
-            nome: Inome.value
-            nome: Icpf.value
-            nome: Iemail.value
-            nome: Itel.value
-
-};
+        cadastrar():
+        limpar();
 });
