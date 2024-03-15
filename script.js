@@ -1,33 +1,33 @@
-const formulario = document.queruSelector("fora");
-const Inome = document.querySelector("nome");
-const Icpf = document.querySelector("cpf");
-const Iemail = document.querySelector("email");
-const Itel = document.querySelector("tel");
+const formCadastro = document.getElementById('form-cadastro');
+const formBusca = document.getElementById('form-busca');
 
-function cadastrar () {
-    
-     fetch("echo/json/"), 
-     {
-        headers: {
-            'Accept': 'application/json',
-            'Content=Type': 'application/jason'
-        },
-        methon: "POST",
-        body: JSON.stringify({ a: 1, b: 2 })
-     })
-     .then(function (res) {console.log(res) })
-     .catch(function (res) {console.log(res) })
-    };
+formCadastro.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-        Function limpar() = {
-            Inome.value = "";
-            Icpf.value = "";
-            Iemail.value = "";
-            Itel.value = "";
-};
-       formulario.addEventListener('submit', function (event) {
-        event.preventDefault();
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.getElementById('email').value;
+    const telefone = document.getElementById('telefone').value;
 
-        cadastrar():
-        limpar();
+    // Cadastrar o cliente
+
+    console.log(`Nome: ${nome}`);
+    console.log(`CPF: ${cpf}`);
+    console.log(`Email: ${email}`);
+    console.log(`Telefone: ${telefone}`);
+
+    // Limpar o formulário
+    formCadastro.reset();
+});
+
+formBusca.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const cpfBusca = document.getElementById('cpf-busca').value;
+
+    // Buscar o cliente por CPF
+
+    console.log(`CPF: ${cpfBusca}`);
+
+    // Exibir os dados do cliente
 });
