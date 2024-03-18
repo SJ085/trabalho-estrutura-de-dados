@@ -5,14 +5,13 @@ import java.util.HashMap;
 
 public class CadastroClientes {
     private HashMap<String, Cliente> tabelaHash;
-
     public CadastroClientes() {
         tabelaHash = new HashMap<>();
 
         // Configurar a interface gráfica
         JFrame frame = new JFrame("Cadastro de Clientes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1920, 1080);
+        frame.setSize(640, 480);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -22,7 +21,7 @@ public class CadastroClientes {
         panel.add(labelNome);
 
         JTextField fieldNome = new JTextField(20);
-        fieldNome.setBounds(100, 10, 160, 25);
+        fieldNome.setBounds(100, 10, 280, 25);
         panel.add(fieldNome);
 
         JLabel labelCPF = new JLabel("CPF:");
@@ -30,7 +29,7 @@ public class CadastroClientes {
         panel.add(labelCPF);
 
         JTextField fieldCPF = new JTextField(20);
-        fieldCPF.setBounds(100, 40, 160, 25);
+        fieldCPF.setBounds(100, 40, 280, 25);
         panel.add(fieldCPF);
 
         JLabel labelEmail = new JLabel("Email:");
@@ -38,7 +37,7 @@ public class CadastroClientes {
         panel.add(labelEmail);
 
         JTextField fieldEmail = new JTextField(20);
-        fieldEmail.setBounds(100, 70, 160, 25);
+        fieldEmail.setBounds(100, 70, 280, 25);
         panel.add(fieldEmail);
 
         JLabel labelTelefone = new JLabel("Telefone:");
@@ -46,11 +45,11 @@ public class CadastroClientes {
         panel.add(labelTelefone);
 
         JTextField fieldTelefone = new JTextField(20);
-        fieldTelefone.setBounds(100, 100, 160, 25);
+        fieldTelefone.setBounds(100, 100, 280, 25);
         panel.add(fieldTelefone);
 
         JButton buttonCadastrar = new JButton("Cadastrar");
-        buttonCadastrar.setBounds(10, 130, 100, 25);
+        buttonCadastrar.setBounds(10, 130, 200, 25);
         buttonCadastrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String nome = fieldNome.getText();

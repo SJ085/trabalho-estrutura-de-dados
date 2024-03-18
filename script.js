@@ -12,9 +12,6 @@ function buscarCliente() {
         var nomeParagrafo = document.createElement('p');
         nomeParagrafo.textContent = 'Nome: ' + clienteEncontrado.nome;
 
-        var cpfParagrafo = document.createElement('p');
-        cpfParagrafo.textContent = 'CPF: ' + clienteEncontrado.cpf;
-
         var emailParagrafo = document.createElement('p');
         emailParagrafo.textContent = 'Email: ' + clienteEncontrado.email;
 
@@ -23,7 +20,6 @@ function buscarCliente() {
 
         // Adiciona os parágrafos à div de resultado
         resultadoDiv.appendChild(nomeParagrafo);
-        resultadoDiv.appendChild(cpfParagrafo);
         resultadoDiv.appendChild(emailParagrafo);
         resultadoDiv.appendChild(telefoneParagrafo);
     } else {
