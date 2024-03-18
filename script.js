@@ -1,33 +1,32 @@
-const formCadastro = document.getElementById('form-cadastro');
-const formBusca = document.getElementById('form-busca');
+// Função para buscar o cliente pelo CPF e exibir suas informações
+function buscarCliente() {
+    var cpfBusca = document.getElementById('buscarCPF').value;
+    var clienteEncontrado = tabelaHash[cpfBusca];
 
-formCadastro.addEventListener('submit', (event) => {
-    event.preventDefault();
+    var resultadoDiv = document.getElementById('resultadoBusca');
 
-    const nome = document.getElementById('nome').value;
-    const cpf = document.getElementById('cpf').value;
-    const email = document.getElementById('email').value;
-    const telefone = document.getElementById('telefone').value;
+    if (clienteEncontrado) {
+        resultadoDiv.innerHTML = ''; // Limpa o conteúdo anterior
 
-    // Cadastrar o cliente
+        // Cria elementos para exibir as informações do cliente
+        var nomeParagrafo = document.createElement('p');
+        nomeParagrafo.textContent = 'Nome: ' + clienteEncontrado.nome;
 
-    console.log(`Nome: ${nome}`);
-    console.log(`CPF: ${cpf}`);
-    console.log(`Email: ${email}`);
-    console.log(`Telefone: ${telefone}`);
+        var cpfParagrafo = document.createElement('p');
+        cpfParagrafo.textContent = 'CPF: ' + clienteEncontrado.cpf;
 
-    // Limpar o formulário
-    formCadastro.reset();
-});
+        var emailParagrafo = document.createElement('p');
+        emailParagrafo.textContent = 'Email: ' + clienteEncontrado.email;
 
-formBusca.addEventListener('submit', (event) => {
-    event.preventDefault();
+        var telefoneParagrafo = document.createElement('p');
+        telefoneParagrafo.textContent = 'Telefone: ' + clienteEncontrado.telefone;
 
-    const cpfBusca = document.getElementById('cpf-busca').value;
-
-    // Buscar o cliente por CPF
-
-    console.log(`CPF: ${cpfBusca}`);
-
-    // Exibir os dados do cliente
-});
+        // Adiciona os parágrafos à div de resultado
+        resultadoDiv.appendChild(nomeParagrafo);
+        resultadoDiv.appendChild(cpfParagrafo);
+        resultadoDiv.appendChild(emailParagrafo);
+        resultadoDiv.appendChild(telefoneParagrafo);
+    } else {
+        resultadoDiv.innerHTML = 'Cliente não encontrado!';
+    }
+}
