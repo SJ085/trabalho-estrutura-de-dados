@@ -12,7 +12,7 @@ public class CadastroClientes {
         // Configurar a interface gráfica
         JFrame frame = new JFrame("Cadastro de Clientes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(1920, 1080);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
