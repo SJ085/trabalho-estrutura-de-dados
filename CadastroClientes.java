@@ -1,10 +1,16 @@
 import javax.swing.*;
+
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class CadastroClientes {
     private HashMap<String, Cliente> tabelaHash;
+
+    /**
+     * 
+     */
     public CadastroClientes() {
         tabelaHash = new HashMap<>();
 
@@ -49,7 +55,10 @@ public class CadastroClientes {
         panel.add(fieldTelefone);
 
         JButton buttonCadastrar = new JButton("Cadastrar");
-        buttonCadastrar.setBounds(10, 130, 200, 25);
+        buttonCadastrar.setBackground(Color.white);
+        buttonCadastrar.setForeground(Color.black);
+
+        buttonCadastrar.setBounds(10, 130, 100, 25);
         buttonCadastrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String nome = fieldNome.getText();
@@ -73,6 +82,8 @@ public class CadastroClientes {
         panel.add(fieldBuscarCPF);
 
         JButton buttonBuscar = new JButton("Buscar");
+        buttonBuscar.setBackground(Color.white);
+        buttonBuscar.setForeground(Color.black);
         buttonBuscar.setBounds(270, 160, 100, 25);
         buttonBuscar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
