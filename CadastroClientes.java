@@ -1,5 +1,5 @@
 import javax.swing.*;
-
+import javax.swing.table.DefaultTableModel;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,17 +7,22 @@ import java.util.HashMap;
 
 public class CadastroClientes {
     private HashMap<String, Cliente> tabelaHash;
+    private DefaultTableModel tableModel;
+    private JTable table;
 
-    /**
-     * 
-     */
+
     public CadastroClientes() {
         tabelaHash = new HashMap<>();
+        tableModel = new DefaultTableModel();
+        tableModel.addColumn("Nome");
+        tableModel.addColumn("CPF");
+        tableModel.addColumn("Email");
+        tableModel.addColumn("Telefone");
 
         // Configurar a interface gráfica
         JFrame frame = new JFrame("Cadastro de Clientes");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(640, 480);
+        frame.setSize(800, 400);
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -57,7 +62,6 @@ public class CadastroClientes {
         JButton buttonCadastrar = new JButton("Cadastrar");
         buttonCadastrar.setBackground(Color.white);
         buttonCadastrar.setForeground(Color.black);
-
         buttonCadastrar.setBounds(10, 130, 100, 25);
         buttonCadastrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -68,6 +72,10 @@ public class CadastroClientes {
 
                 Cliente cliente = new Cliente(nome, cpf, email, telefone);
                 tabelaHash.put(cpf, cliente);
+                
+                Object[] rowData = {nome, cpf, email, telefone};
+                tableModel.addRow(rowData);
+
                 JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
             }
         });
@@ -97,6 +105,13 @@ public class CadastroClientes {
             }
         });
         panel.add(buttonBuscar);
+
+        table = new JTable(tableModel);
+
+        
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(10, 190, 780, 150); // Ajuste as dimensões conforme necessário
+        panel.add(scrollPane);
 
         frame.add(panel);
         frame.setVisible(true);
