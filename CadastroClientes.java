@@ -20,7 +20,7 @@ public class CadastroClientes {
         tableModel.addColumn("Telefone");
 
         // Configurar a interface gráfica
-        JFrame frame = new JFrame("Cadastro de Clientes");
+        JFrame frame = new JFrame("Cadastro de Clientes e cpf");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(900, 500);
 
